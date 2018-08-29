@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+/* recursive
+int getNumOfBag(int num) {
+	static int numOfBag = 0;
+	if(num % 5 == 0 && num >= 5) {
+		numOfBag++;
+		getNumOfBag(num - 5);
+	}
+	else if(num >= 3) {
+		numOfBag++;
+		getNumOfBag(num - 3);
+	}
+	else {
+		return (num == 0) ? numOfBag : -1;
+	}
+}
+*/
+
+int main()
+{
+	int N = 0;
+	int numOfBag = 0;
+	cin >> N;
+	while(N >= 3) { // non-recursive
+		if(N % 5 == 0 && N >= 5) {
+			numOfBag++;
+			N = N-5;
+		}
+		else if(N >= 3) {
+			numOfBag++;
+			N = N-3;
+		}
+	}
+
+	cout << ((N == 0) ? numOfBag : -1) << endl;
+
+	return 0;
+}
