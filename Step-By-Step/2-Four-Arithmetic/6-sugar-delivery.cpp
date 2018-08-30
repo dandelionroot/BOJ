@@ -17,7 +17,7 @@ int getNumOfBag(int num) {
 	}
 }
 */
-
+//모든 경우에 대해 예시를 통하여 파악해 보는것이 중요.
 int main()
 {
 	int N = 0;

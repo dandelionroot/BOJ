@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdio>
 using namespace std;
-
+//cin과 cout, endl은 느리다.
 int main(int argc, char const *argv[]) {
   int N;
   int A=0, B=0;
