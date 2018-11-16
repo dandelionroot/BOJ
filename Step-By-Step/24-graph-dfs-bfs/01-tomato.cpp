@@ -29,6 +29,15 @@ public:
 			return true;
 		return false;
 	}
+	static void moveQ(queue<pair<int, int>> &A,
+		queue<pair<int, int>> &B) {
+		pair<int, int> p;
+		while(!(A.size()==0)) {
+			p = A.front();
+			A.pop();
+			B.push(p);
+		}
+	}
 };
 
 void Box::setContainer() {
@@ -103,18 +112,7 @@ int main(void)
 			cout << -1 << endl;
 			return 0;
 		}
-		if(box.isCompleted())
-			break;
-		temp = box.getNum();
-		while(st2.size()!=0) {
-			box.infectAndPushLink(st2.front(), st1);
-			st2.pop();
-		}
-		++day;
-		if(temp == box.getNum()) {
-			cout << -1 << endl;
-			return 0;
-		}
+		Box::moveQ(st2, st1);
 	}
 
 	cout << day << endl;
